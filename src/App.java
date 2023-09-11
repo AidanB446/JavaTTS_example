@@ -4,6 +4,9 @@ import javax.speech.synthesis.SynthesizerModeDesc;
 import javax.speech.synthesis.Synthesizer;
 import java.util.Locale;
 
+// needed imports above
+
+
 public class App {
     
 
@@ -13,7 +16,7 @@ public class App {
                 "freetts.voices",
                 "com.sun.speech.freetts.en.us"
                     + ".cmu_us_kal.KevinVoiceDirectory");
-  
+            
             
             Central.registerEngineCentral(
                 "com.sun.speech.freetts"
