@@ -11,11 +11,13 @@ public class App {
     
 
     public static void Speak(String txt) {
+        
         try {
+           
             System.setProperty(
                 "freetts.voices",
                 "com.sun.speech.freetts.en.us"
-                    + ".cmu_us_kal.KevinVoiceDirectory");
+                    + ".cmu_us_kal.KevinVoiceDirectory"); // just setting voice property
             
             
             Central.registerEngineCentral(
@@ -23,10 +25,12 @@ public class App {
                 + ".jsapi.FreeTTSEngineCentral");
 
             
-            Synthesizer synthesizer = Central.createSynthesizer(new SynthesizerModeDesc(Locale.US));
+            Synthesizer synthesizer = Central.createSynthesizer(new SynthesizerModeDesc(Locale.US)); // setup the synthesizer
             synthesizer.allocate();
             synthesizer.resume();
 
+            //Rest of the code is self explanatory
+            
             synthesizer.speakPlainText(txt, null);
 
             synthesizer.waitEngineState(Synthesizer.QUEUE_EMPTY);
